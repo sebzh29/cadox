@@ -16,12 +16,11 @@
 
         <TextView
             android:id="@+id/titrePageArticle"
-            style="@style/TextAppearance.Material3.DisplaySmall"
-            android:layout_width="74dp"
-            android:layout_height="35dp"
+            android:layout_width="168dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
             android:text="Détail d'un article"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +32,8 @@
             android:layout_marginTop="32dp"
             android:text="@{article.intitule}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titrePageArticle" />
+            app:layout_constraintTop_toBottomOf="@+id/titrePageArticle"
+            tools:text="intitule" />
 
         <TextView
             android:id="@+id/descriptionArticle"
@@ -43,7 +43,8 @@
             android:layout_marginTop="8dp"
             android:text="@{article.description}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/intituleArticle" />
+            app:layout_constraintTop_toBottomOf="@+id/intituleArticle"
+            tools:text="description" />
 
         <TextView
             android:id="@+id/prixArticle"
@@ -54,32 +55,40 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionArticle" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionArticle"
+            tools:text="PRIX" />
 
         <TextView
             android:id="@+id/dateAchatArticle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:text="@{String.valueOf(article.dateAchat)}"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxIsAchete"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prixArticle" />
+            app:layout_constraintTop_toBottomOf="@+id/prixArticle"
+            tools:text="dateAchat" />
 
         <CheckBox
             android:id="@+id/checkBoxIsAchete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:max="8"
+            android:layout_marginEnd="16dp"
             android:checked="@{article.achete}"
+            android:max="8"
             app:layout_constraintBottom_toBottomOf="@+id/dateAchatArticle"
-            app:layout_constraintTop_toTopOf="@+id/dateAchatArticle"
-            tools:layout_editor_absoluteX="290dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dateAchatArticle"
+            app:layout_constraintTop_toTopOf="@+id/dateAchatArticle" />
 
         <RatingBar
             android:id="@+id/ratingBarDegreEnvie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
             android:rating="@{article.niveau}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +102,8 @@
             android:layout_marginTop="8dp"
             android:text="@{article.url}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ratingBarDegreEnvie" />
+            app:layout_constraintTop_toBottomOf="@+id/ratingBarDegreEnvie"
+            tools:text="URL" />
 
         <ImageButton
             android:id="@+id/imageButtonEdit"

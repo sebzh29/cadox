@@ -1,7 +1,12 @@
 package com.example.tp2cadox.bo
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 import java.time.LocalDate
 
+
+@Parcelize
 data class Article (
     var id:Long,
     var intitule:String,
@@ -11,6 +16,6 @@ data class Article (
     var url:String?,
     var achete:Boolean?,
     var dateAchat:LocalDate?
-    )
-{
-}
+    ): Parcelable
+
+
